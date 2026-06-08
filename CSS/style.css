@@ -189,11 +189,17 @@
   .stat { text-align: center; }
   .stat-num {
     font-family: 'Syne', sans-serif;
-    font-size: 36px; font-weight: 800;
+    font-size: 70px; 
+    font-weight: 800;
     color: var(--c2);
-    line-height: 1;
+    line-height: 4;
   }
-  .stat-label { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 4px; }
+  .stat-label { 
+    font-size: 15px; 
+    color: var(--muted); 
+    letter-spacing: 0.06em; 
+    text-transform: uppercase; 
+    margin-top: -70px; }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -323,4 +329,103 @@
   .s4 .skill-bar-fill { background: var(--c4); }
   .s5 .skill-bar-fill { background: var(--c5); }
   @keyframes barGrow { from { width: 0; } }
+
+
+  /* ─── EXPERIENCE ─── */
+  #experience { background: var(--dark2); }
+  .exp-timeline { position: relative; padding-left: 32px; }
+  .exp-timeline::before {
+    content: '';
+    position: absolute; left: 7px; top: 8px; bottom: 0;
+    width: 1.5px; background: var(--border);
+  }
+  .exp-item { position: relative; margin-bottom: 56px; }
+  .exp-dot {
+    position: absolute; left: -29px; top: 6px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--dark2); border: 2px solid var(--c1);
+    z-index: 1;
+  }
+  .exp-dot::after {
+    content: '';
+    position: absolute; inset: 3px;
+    border-radius: 50%; background: var(--c1);
+  }
+  .exp-period {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--c2); margin-bottom: 8px;
+  }
+  .exp-role {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px; font-weight: 700; letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+  .exp-company {
+    font-size: 14px; color: var(--c3); font-weight: 500; margin-bottom: 18px;
+  }
+  .exp-card {
+    background: var(--dark3);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .exp-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .exp-card ul li {
+    font-size: 14px; line-height: 1.6;
+    color: rgba(240,237,232,0.65);
+    padding-left: 20px; position: relative;
+  }
+  .exp-card ul li::before {
+    content: '→';
+    position: absolute; left: 0;
+    color: var(--c1); font-size: 12px;
+  }
+
+   /* ─── PROJECTS ─── */
+  #projects { background: var(--dark); }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  .project-card {
+    background: var(--dark3);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.25s, border-color 0.25s;
+  }
+  .project-card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.15); }
+  .project-thumb {
+    height: 160px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-thumb::after {
+    content: '';
+    position: absolute; inset: 0;
+    opacity: 0.15;
+  }
+  .pt1 { background: linear-gradient(135deg, #1a0a0e, #3d0e18); }
+  .pt2 { background: linear-gradient(135deg, #0a1a1a, #0e3d38); }
+  .pt3 { background: linear-gradient(135deg, #1a150a, #3d2d0e); }
+  .pt4 { background: linear-gradient(135deg, #130a1a, #2e0e3d); }
+  .project-body { padding: 24px; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .ptag {
+    font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 100px;
+  }
+  .ptag.red { background: rgba(255,77,109,0.12); color: var(--c1); }
+  .ptag.teal { background: rgba(46,196,182,0.12); color: var(--c3); }
+  .ptag.amber { background: rgba(255,159,28,0.12); color: var(--c2); }
+  .ptag.purple { background: rgba(123,47,190,0.12); color: #b76dff; }
+  .project-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 16px; font-weight: 700; letter-spacing: -0.3px;
+    margin-bottom: 8px; text-align: justify;
+  }
+  .project-desc { font-size: 13px; color: var(--muted); line-height: 1.65; text-align: justify;}
 
